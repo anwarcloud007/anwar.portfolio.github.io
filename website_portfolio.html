@@ -1,0 +1,244 @@
+<!--
+  Portfolio template for freelancer - single-file HTML + CSS
+  - Replace placeholders (NAME, TITLE, BIO, PROJECTS, CONTACT)
+  - Images use placeholders (replace with your images or S3 URLs)
+  - To deploy: upload this file and assets to your S3 bucket and enable static website hosting
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anwar bin Omar — AWS Solutions Architect & Cloud Freelancer</title>
+  <meta name="description" content="Anwar bin Omar — AWS Solutions Architect, Terraform & Cloud Infrastructure. Portfolio & contact." />
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.04);
+      --max-w:1100px; --radius:14px; --gap:20px; --ff:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:var(--ff);background:linear-gradient(180deg,#041022 0%,var(--bg) 100%);color:#e6eef8;line-height:1.45}
+    a{color:var(--accent);text-decoration:none}
+
+    .wrap{max-width:var(--max-w);margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021024}
+    .brand h1{margin:0;font-size:18px}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    nav{margin-left:auto;display:flex;gap:12px}
+    .btn{background:var(--glass);padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021024}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:var(--radius);box-shadow:0 6px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .hero-left h2{margin:0 0 8px 0;font-size:28px}
+    .lead{color:var(--muted);margin-bottom:16px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:8px 10px;background:rgba(255,255,255,0.03);border-radius:999px;font-weight:600;font-size:13px}
+
+    .profile{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:20px;overflow:hidden;border:6px solid rgba(255,255,255,0.04)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .download{display:flex;gap:8px}
+
+    /* sections */
+    .sections{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:22px}
+    .projects{display:grid;gap:14px}
+    .project{display:flex;gap:14px;align-items:center}
+    .project .thumb{width:112px;height:72px;border-radius:10px;background:#071020;flex-shrink:0;display:inline-block;overflow:hidden}
+    .project h4{margin:0 0 6px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+
+    .card h3{margin-top:0}
+    .contact-form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{background:transparent;border:1px solid rgba(255,255,255,0.05);padding:10px;border-radius:8px;color:inherit}
+    textarea{min-height:120px;resize:vertical}
+    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .sections{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    /* tiny helper */
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:12px}
+    .row{display:flex;gap:12px;align-items:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AB</div>
+        <div>
+          <h1>Anwar bin Omar</h1>
+          <p class="muted">AWS Solutions Architect · Terraform · Cloud Automation</p>
+        </div>
+      </div>
+
+      <nav>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#services">Services</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn cta" href="#contact">Hire me</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card hero-left">
+        <h2>Hi — I'm Anwar. I design secure, automated AWS infrastructure.</h2>
+        <p class="lead">I help startups and SMEs migrate to cloud, automate infrastructure with Terraform, and build resilient, cost-optimized systems.</p>
+
+        <div class="skills" aria-hidden>
+          <div class="chip">AWS</div>
+          <div class="chip">Terraform</div>
+          <div class="chip">S3 & CloudFront</div>
+          <div class="chip">Security</div>
+          <div class="chip">CI/CD</div>
+        </div>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+        <h3>Selected Projects</h3>
+        <div class="projects" id="projects">
+
+          <!-- Project 1 -->
+          <article class="project card">
+            <div class="thumb"><img src="https://via.placeholder.com/300x180?text=Project+1" alt="Project 1"></div>
+            <div>
+              <h4>Static Portfolio Hosting with S3</h4>
+              <p class="muted">Designed S3-only static hosting with Terraform and automated deploys. Reduced hosting cost and simplified CI/CD.</p>
+              <div class="muted" style="margin-top:8px;font-size:13px">Tech: Terraform, S3, Route53</div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project card">
+            <div class="thumb"><img src="https://via.placeholder.com/300x180?text=Project+2" alt="Project 2"></div>
+            <div>
+              <h4>Control Tower Landing Zone</h4>
+              <p class="muted">Built secure multi-account AWS landing zone with Audit & Log Archive under Security OU, implemented guardrails.</p>
+              <div class="muted" style="margin-top:8px;font-size:13px">Tech: AWS Control Tower, Organizations</div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">
+          <img src="D:\Users\radmik\Desktop\AWS\freelancer\portfolio\anwar.jpg" alt="Anwar photo">
+        </div>
+        <h3>Anwar bin Omar</h3>
+        <p class="muted">Freelance AWS Solutions Architect
+        <br>Malaysia · Open to remote contracts</p>
+
+        <div class="download">
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="D:\Users\radmik\Desktop\AWS\freelancer\portfolio/Anwar-Omar-2025-v5.pdf" download>Download CV</a>
+        </div>
+
+        <div style="margin-top:12px;text-align:center">
+          <a class="btn" href="https://www.linkedin.com/in/anwar-omar-25b191209" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+
+      </aside>
+    </section>
+
+    <section class="sections">
+      <main class="card">
+        <h3 id="services">Services I offer</h3>
+        <div class="grid">
+          <div class="row">
+            <div style="flex:1">
+              <strong>Cloud Architecture</strong>
+              <div class="muted">Design fault-tolerant, cost-optimized AWS architectures.</div>
+            </div>
+            <div style="width:160px;text-align:right" class="muted">Consulting</div>
+          </div>
+
+          <div class="row">
+            <div style="flex:1">
+              <strong>Infrastructure as Code</strong>
+              <div class="muted">Terraform modules, modules registry, reusable patterns.</div>
+            </div>
+            <div style="width:160px;text-align:right" class="muted">Implementation</div>
+          </div>
+
+          <div class="row">
+            <div style="flex:1">
+              <strong>Security & Governance</strong>
+              <div class="muted">Control Tower, IAM least privilege, KMS, logging & monitoring.</div>
+            </div>
+            <div style="width:160px;text-align:right" class="muted">Audits</div>
+          </div>
+        </div>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+
+        <h3>More Projects & Case Studies</h3>
+        <p class="muted">Replace these placeholders with real project write-ups. Aim for 3–6 case studies showing problem → solution → results.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px">
+          <div class="card" style="padding:12px">
+            <strong>Project — E-commerce Migration</strong>
+            <div class="muted">Migrated app to ECS & RDS with blue/green deploys, improving availability.</div>
+          </div>
+          <div class="card" style="padding:12px">
+            <strong>Project — Cost Reduction</strong>
+            <div class="muted">Rightsized infra, reserved instances and savings plan — saved 35% cost.</div>
+          </div>
+        </div>
+
+      </main>
+
+      <aside class="card">
+        <h3 id="contact">Contact</h3>
+        <p class="muted">Interested in working together? Send an email or message — I reply within 24–48 hours.</p>
+
+        <form class="contact-form" onsubmit="sendMail(event)">
+          <input id="name" placeholder="Your name" required />
+          <input id="email" type="email" placeholder="Your email" required />
+          <input id="subject" placeholder="Subject" />
+          <textarea id="message" placeholder="Message" required></textarea>
+          <button class="btn cta" type="submit">Send Message</button>
+        </form>
+
+        <script>
+          function sendMail(e){
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value || 'Portfolio contact';
+            const message = document.getElementById('message').value;
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+            // opens default email client (simple, works without backend)
+            window.location.href = `mailto:you@yourdomain.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+          }
+        </script>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+        <div class="muted">Phone: +60 11-5111-6637</div>
+        <div class="muted">Location: Malaysia</div>
+      </aside>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Anwar bin Omar — Built with ❤️ · <a href="#">Privacy</a>
+    </footer>
+  </div>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
